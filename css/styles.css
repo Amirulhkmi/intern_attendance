@@ -1,0 +1,349 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #ffffff;
+    color: #333;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative; /* Ensure header stays at top */
+    z-index: 1000; /* Keep above other content */
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+.top-header nav {
+    display: flex;
+    gap: 20px;
+}
+
+.top-header nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.date-time {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.profile-circle {
+    width: 30px;
+    height: 30px;
+    background: #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Ensure these styles don't interfere with login page */
+.dashboard-content {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.dashboard-content p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: -10px;
+}
+
+.stats-container {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+.stat-icon.total {
+    background: #dbeafe;
+}
+
+.stat-icon.present {
+    background: #d1fae5;
+}
+
+.stat-icon.absent {
+    background: #fee2e2;
+}
+
+.stat-icon.late {
+    background: #fef3c7;
+}
+
+.stat-card h3 {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+}
+
+.stat-card p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 5px 0 0;
+}
+
+.table-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.table-header h2 {
+    flex: 1;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.table-header input {
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    width: 200px;
+}
+
+.export-report {
+    padding: 8px 12px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.table-header .export-report {
+    margin-left: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.student-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.name-dept {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-weight: 500;
+}
+
+.dept {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status.present {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status.late {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status.absent {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.action-edit {
+    color: #3b82f6;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.action-delete {
+    color: #ef4444;
+    text-decoration: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.page-links {
+    display: flex;
+    gap: 10px;
+}
+
+.page-links a, .page-links span {
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.page-links .current {
+    background: #3b82f6;
+    color: white;
+}
+
+.page-links a:hover {
+    background: #f3f4f6;
+}
+
+/* Navigation active style */
+nav a {
+    padding: 6px 12px;
+    color: #1f2937;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav a.active {
+    background-color: #2563eb;
+    color: white !important;
+    border-radius: 12px;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #e5e7eb;
+    border-radius: 12px;
+    color: #1f2937;
+}
+
+/* General button reset */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+/* Specific styling for clock-in and clock-out buttons (scoped to clock.php context) */
+.clock-container button[name="clock_in"],
+.clock-container button[name="clock_out"] {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+}
+
+/* Specific styling for clock-in button */
+.clock-container button[name="clock_in"] {
+    background-color: #3b82f6;
+}
+
+.clock-container button[name="clock_in"]:hover {
+    background-color: #2563eb;
+}
+
+/* Specific styling for clock-out button */
+.clock-container button[name="clock_out"] {
+    background-color: #dc2626;
+}
+
+.clock-container button[name="clock_out"]:hover {
+    background-color: #b91c1c;
+}
+
+button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+@media (min-width: 600px) {
+    button,
+    .export-report {
+        padding: 10px 15px;
+        font-size: 1.1rem;
+    }
+    .clock-container button[name="clock_in"],
+    .clock-container button[name="clock_out"] {
+        width: 100%;
+    }
+}
