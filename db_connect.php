@@ -1,10 +1,10 @@
 <?php
 // Use the credentials provided by Railway (MySQL plugin)
-$host = "mysql.railway.internal";  // <-- Railway host
-$port = 3306;                                 // <-- Railway port
-$user = "root";                               // <-- Railway user
-$pass = "UyIfPlnMFcROjQPDwqUhOigqXbrfhZjV";              // <-- Railway password
-$db   = "railway";                            // <-- Railway database name
+$host = getenv("DB_HOST");
+$port = getenv("DB_PORT");
+$user = getenv("DB_USER");
+$pass = getenv("DB_PASS");
+$db   = getenv("DB_NAME");
 
 $conn = new mysqli($host, $user, $pass, $db, $port);
 
