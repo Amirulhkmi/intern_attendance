@@ -1,13 +1,14 @@
-# Use official PHP image
-FROM php:8.2-cli
+# Use the PHP Apache image (includes web server)
+FROM php:8.2-apache
 
-# Copy project files into container
-COPY . /app
-WORKDIR /app
+# Enable mysqli extension
+RUN docker-php-ext-install mysqli
 
-# Expose port Railway uses
-EXPOSE 8080
+# Set working directory to the Apache web root
+WORKDIR /var/www/html
 
-# Start PHP built-in server on port 8080
-CMD ["sh", "-c", "php -S 0.0.0.0:${PORT} -t ."]
+# Copy your project files into the container
+COPY . .
 
+# Railway will provide the PORT environment variable,
+# Apache listens on that automatically, so no CMD override is needed.
