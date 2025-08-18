@@ -5,8 +5,8 @@ FROM php:8.2-cli
 COPY . /app
 WORKDIR /app
 
-# Expose port 80
-EXPOSE 80
+# Expose port Railway uses
+EXPOSE 8080
 
-# Start PHP built-in server
-CMD ["php", "-S", "0.0.0.0:80", "-t", "."]
+# Start PHP built-in server on port 8080
+CMD ["php", "-S", "0.0.0.0:8080", "-t", "."]
