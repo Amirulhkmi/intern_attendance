@@ -1,14 +1,15 @@
-# Use the PHP Apache image (includes web server)
 FROM php:8.2-apache
 
 # Enable mysqli extension
 RUN docker-php-ext-install mysqli
 
-# Set working directory to the Apache web root
+# Set working directory
 WORKDIR /var/www/html
-
-# Copy your project files into the container
 COPY . .
 
-# Railway will provide the PORT environment variable,
-# Apache listens on that automatically, so no CMD override is needed.
+# Tell Apache to listen on the port provided by the Railway runtime
+ENV PORT=80
+RUN sed -i "s/Listen 80/Listen ${PORT}/" /etc/apache2/ports.conf
+
+# Start Apache in the foreground
+CMD ["apache2-foreground"]
