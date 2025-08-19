@@ -2,7 +2,6 @@
 FROM php:8.2-apache
 
 # Install required PHP extensions
-RUN docker-php-ext-install pdo pdo_mysql
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Copy the application code to Apache document root
@@ -14,8 +13,9 @@ RUN chown -R www-data:www-data /var/www/html
 # Enable the Apache rewrite module (optional but often needed for routing)
 RUN a2enmod rewrite
 
-# Render listens on port 80
-EXPOSE 80
+# Tell Railway which port to use
+ENV PORT=8080
+EXPOSE 8080
 
 # Start Apache
 CMD ["apache2-foreground"]
